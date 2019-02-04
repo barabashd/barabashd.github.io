@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
-    $(".navigation > li").on("click", "a", function(event) {
+    $preloader = $('.preloader'),
+    $loader = $preloader.find('.preloader');
+    $loader.fadeOut();
+    $preloader.delay(1000).fadeOut(1500);
+
+    $(".navigation > li > a").click(function(event) {
         event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top - 60;
@@ -11,25 +16,19 @@ $(document).ready(function() {
 
     $('.intro_block .about_me').addClass('intro_img_visible');
 
-
     if (window.matchMedia('(max-width: 991px)').matches) {
         $('.mobile_menu').click(function() {
             $('header nav').toggleClass('mobile_menu_active');
             if ($('header nav').hasClass('mobile_menu_active')) {
-                /*$('body, html').css('height', '100%');
-                $('body, html').css('margin', '0');
-                $('body, html').css('overflow', 'hidden');*/
                 $(".navigation > li").on("click", "a", function(){
                     $('header nav').removeClass('mobile_menu_active');
                 });
             } else {
             	$('header nav').removeClass('mobile_menu_active');
-                /*$('body, html').css('overflow', 'visible');*/
             }
         });
     } else {
         $('header nav').removeClass('mobile_menu_active');
-        /*$('body, html').css('overflow', 'visible');*/
 	}
 
 
@@ -38,7 +37,6 @@ $(document).ready(function() {
 
         } else {
         	$('header nav').removeClass('mobile_menu_active');
-            /*$('body, html').css('overflow', 'visible');*/
         }
     });
 
@@ -47,9 +45,8 @@ $(document).ready(function() {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         arrows: false,
-        centerMode: true,
         responsive: [{
                 breakpoint: 1200,
                 settings: {
@@ -67,5 +64,33 @@ $(document).ready(function() {
 
 
 
+    /*blog*/
+    $(".all_post_block > .wrapper > a").addClass('active_post'); 
+    var min_page_height = $(window).height() - $('#contact').height();
+    $('.all_post_block').css('min-height', min_page_height);
+    $(window).resize(function(){
+        min_page_height = $(window).height() - $('#contact').height();
+        $('.all_post_block').css('min-height', min_page_height);
+    });
+    $('.filter_post > ul > li').click(function(){
 
+        $('.filter_post > ul > li').removeClass('active_tabs');
+        $(this).addClass('active_tabs');
+        
+        if( $(this).hasClass('all') ){
+            $(".all_post_block > .wrapper > a").addClass('active_post');  
+        } 
+        if( $(this).hasClass('travel') ){
+            $(".all_post_block > .wrapper > a").removeClass('active_post'); 
+            $(".all_post_block > .wrapper > a[data_tag='travel']").addClass('active_post');  
+        } 
+        if( $(this).hasClass('code') ){
+            $(".all_post_block > .wrapper > a").removeClass('active_post'); 
+            $(".all_post_block > .wrapper > a[data_tag='code']").addClass('active_post');  
+        } 
+        if( $(this).hasClass('other') ){
+            $(".all_post_block > .wrapper > a").removeClass('active_post'); 
+            $(".all_post_block > .wrapper > a[data_tag='other']").addClass('active_post');  
+        } 
+    });
 });
