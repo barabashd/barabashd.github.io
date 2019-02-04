@@ -3,19 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dmitriy Barabash CV</title>
+    <title>Dmitriy Barabash - CV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/slick.css">
-    <script src="js/slick.js"></script>
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="shortcut icon" href="img/apple.png" type="image/png">
 </head>
 
 <body>
-
+<div class="preloader">
+    <div class="preloader_wrapper">
+        <svg class="svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="100%" stop-color="#f3904f" />
+                </linearGradient>
+            </defs>
+            <circle stroke-width="10" stroke-miterlimit="10" class="cls-1 path" cx="100" cy="100" r="94" stroke="url(#gradient)" />
+        </svg>
+    </div>
+</div>
     <!-- header -->
     <header>
         <div class="wrapper">
@@ -40,7 +47,13 @@
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <ul class="blog">
+                            <li><a href="blog/index.html">Blog</a></li>
+                        </ul>
+                    </li>
                 </ul>
+                
             </nav>
         </div>
     </header>
@@ -314,7 +327,11 @@
             </div>
         </div>
     </footer>
-
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/script.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="css/slick.css">
+<script src="js/slick.js"></script>
 </body>
-
 </html>
