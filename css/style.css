@@ -552,6 +552,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3904f', end
 	text-align: center;
 	padding-top: 10px;
 }
+.prevArrow_c img{
+	transform: rotate(180deg);
+}
+.prevArrow_c img,
+.nextArrow_c img{
+	height: 30px;
+	width: 30px;
+}
+.prevArrow_c{
+	position: absolute;
+	top: calc(50% - 15px); 
+	left: -40px;
+	z-index: 2;
+	cursor: pointer;
+}
+.nextArrow_c{
+	position: absolute;
+	top: calc(50% - 15px); 
+	right: -40px;
+	z-index: 2;
+	cursor: pointer;
+}
 
 /* footer */
 footer{
@@ -618,6 +640,12 @@ footer > .wrapper{
 	.skills_2_bg_img{
 		bottom: -180px;
 	}
+	.prevArrow_c{
+		left: -30px;
+	}
+	.nextArrow_c{
+		right: -30px;
+	}
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {  
 	.wrapper{
@@ -636,6 +664,12 @@ footer > .wrapper{
 	.skills_2_bg_img{
 		bottom: -180px;
 		right: -70px;
+	}
+	.prevArrow_c{
+		left: 10px;
+	}
+	.nextArrow_c{
+		right: 10px;
 	}
 
 
@@ -744,6 +778,13 @@ footer > .wrapper{
 	.skills_2_bg_img{
 		bottom: -130px;
 		right: -120px;
+	}
+
+	.prevArrow_c{
+		left: 10px;
+	}
+	.nextArrow_c{
+		right: 10px;
 	}
 	/* mobile menu */ 
 	.mobile_menu{
@@ -856,6 +897,13 @@ footer > .wrapper{
 	.skills_2_bg_img{
 		top: 130px;
 		right: -120px;
+	}
+
+	.prevArrow_c{
+		left: 10px;
+	}
+	.nextArrow_c{
+		right: 10px;
 	}
 	/* mobile menu */ 
 	.mobile_menu{
@@ -1142,3 +1190,22 @@ html,body{
 .post_text a{
 	color: #6bf;
 }
+
+.download_cv{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: rgba(45,45,45,0.98);
+	z-index: 999;
+}
+.download_cv img{
+	width: 20px;
+}
+
+

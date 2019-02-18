@@ -46,7 +46,9 @@ $(document).ready(function() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 5000,
-        arrows: false,
+        arrows: true,
+        nextArrow: "<div class='nextArrow_c'><img src='img/next.png' alt=''></div>",
+        prevArrow: "<div class='prevArrow_c'><img src='img/next.png' alt=''></div>",
         responsive: [{
                 breakpoint: 1200,
                 settings: {
@@ -54,7 +56,7 @@ $(document).ready(function() {
                     slidesToScroll: 1
                 }
             }, {
-                breakpoint: 768,
+                breakpoint: 991,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
