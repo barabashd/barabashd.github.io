@@ -47,21 +47,50 @@ $(document).ready(function() {
         autoplay: true,
         autoplaySpeed: 5000,
         arrows: true,
+        infinite: true,
+        swipeToSlide: true,
         nextArrow: "<div class='nextArrow_c'><img src='img/next.png' alt=''></div>",
         prevArrow: "<div class='prevArrow_c'><img src='img/next.png' alt=''></div>",
         responsive: [{
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 5,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    swipeToSlide: true
                 }
             }, {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    swipeToSlide: true
                 }
             }]
+    });
+
+    $(".autoplay").each(function() {
+        this.slick.getNavigableIndexes = function() {
+            var _ = this,
+                breakPoint = 0,
+                counter = 0,
+                indexes = [],
+                max;
+
+            if (_.options.infinite === false) {
+                max = _.slideCount;
+            } else {
+                breakPoint = _.options.slideCount * -1;
+                counter = _.options.slideCount * -1;
+                max = _.slideCount * 2;
+            }
+
+            while (breakPoint < max) {
+                indexes.push(breakPoint);
+                breakPoint = counter + _.options.slidesToScroll;
+                counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
+            }
+            return indexes;
+        };
     });
 
 
